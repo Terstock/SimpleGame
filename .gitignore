@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg-info/
+*.egg
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# SQLite DB
+*.db
+*.sqlite3
+
+# Flask instance folder
+instance/
+*.log
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# PyCharm
+.idea/
+
+# Heroku
+*.bak
+*.swp
+
+# Compiled SCSS/CSS/JS
+*.map
+
+# Node modules (if you use npm)
+node_modules/
+
+# dotenv
+.env
+.env.*
+
+# __dist__ folder inside static (optional)
+static/dist/bundle.js

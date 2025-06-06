@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block title %}Новини{% endblock %} {% block content %}
+<h2>Останні новини</h2>
+
+<div class="news-grid">
+  {% for item in news %}
+  <div class="news-card {% if item.is_featured %}featured{% endif %}">
+    {% if item.image_url %}
+    <img src="{{ item.image_url }}" alt="{{ item.title }}" class="news-card__img" />
+    {% endif %}
+    <div class="news-card__description">
+      <h3>{{ item.title }}</h3>
+      <p class="meta">Автор: {{ item.author }} | {{ item.date_posted.strftime('%d.%m.%Y') }}</p>
+    </div>
+
+    <p class="news-card__content">{{ item.content[:200] }}... <a href="{{ url_for('news_detail', news_id=item.id) }}" class="btn-read-more">Читати далі →</a></p>
+  </div>
+  {% else %}
+  <p>Наразі немає новин.</p>
+  {% endfor %}
+</div>
+{% endblock %}

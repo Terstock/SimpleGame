@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ game.title }}</title>
+  </head>
+  <body>
+    <div class="card h-100 shadow-sm">
+      <img src="{{ game.cover_image }}" class="card-img-top" alt="{{ game.title }}" />
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title">{{ game.title }}</h5>
+        <p class="card-text text-muted mb-2"><strong>Жанр:</strong> {{ game.genre }}</p>
+        <p class="card-text text-muted mb-2"><strong>Платформа:</strong> {{ game.platform }}</p>
+        <p class="card-text text-muted mb-2"><strong>Розробник:</strong> {{ game.developer }}</p>
+        <p class="card-text text-muted mb-2"><strong>Дата релізу:</strong> {{ game.release_date.strftime('%d.%m.%Y') if game.release_date else 'N/A' }}</p>
+        <p class="card-text mt-auto">{{ game.description[:150] }}...</p>
+      </div>
+    </div>
+  </body>
+</html>

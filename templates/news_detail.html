@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block title %}{{ article.title }}{% endblock %} {% block content %}
+<div class="news-full">
+  {% if article.image_url %}
+  <img src="{{ article.image_url }}" alt="{{ article.title }}" class="news-full__img" />
+  {% endif %}
+
+  <div class="news-full__info info-block">
+    <h2>{{ article.title }}</h2>
+    <p class="meta">Автор: {{ article.author }} | {{ article.date_posted.strftime('%d.%m.%Y') }}</p>
+  </div>
+
+  <div class="news-full__content">
+    {% for paragraph in article.content.split('\n\n') %}
+    <article class="info-block">
+      <p>{{ paragraph }}</p>
+    </article>
+    {% endfor %}
+  </div>
+
+  <a href="{{ url_for('news_list') }}" class="btn-back">Назад до всіх новин</a>
+</div>
+{% endblock %}
