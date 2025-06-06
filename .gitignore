@@ -45,5 +45,4 @@ node_modules/
 .env
 .env.*
 
-# __dist__ folder inside static (optional)
-static/dist/bundle.js
+
